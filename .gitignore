@@ -17,3 +17,6 @@
 
 # Ignore RubyMine local files
 /.idea
+
+# Database configuration
+/config/database.yml
