@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+post1:
+  id: 1
+  title: El realmadrid gana la liga
+  content: Lo ha hecho con un gol en el último minuto, en fuera de juego y sin querer. El camp now decepcionado
+  image: https://scmedia.itsfogo.com/$-$/9a2c61c0e8834f62ba0f08760a92edee.png
+  url: https://scmedia.itsfogo.com/$-$/9a2c61c0e8834f62ba0f08760a92edee.png
+  category_id: 1
+
+post2:
+  id: 2
+  title: Rajoy roba mil millones y dice, que me quiten lo bailao
+  content: El presidente del gobierno ha robado dinero público y se ha burlado de los españoles en una rueda de prensa posterior
+  image: http://www.sindicatoandaluz.org/files/rajoy.jpg
+  url: http://www.sindicatoandaluz.org/files/rajoy.jpg
+  category_id: 3

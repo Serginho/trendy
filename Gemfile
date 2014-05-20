@@ -32,6 +32,12 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# PostgreSQL adapter
+gem 'pg'
+
+# Foreigner to create foreign keys on migration files
+gem 'foreigner'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
