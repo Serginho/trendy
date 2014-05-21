@@ -16,7 +16,10 @@ module Wrapper
       @finish = false
       @threads = []
       @sources = Source.all.select "id,url"
+      num_sources = Source.count
+      raise Exception, 'There is no sources to crawl' if num_sources == 0
       @num_sources = @sources.length
+      @models = Classifier.get_models 'lib/svm_model/'
     end
 
     def start
@@ -80,9 +83,12 @@ module Wrapper
           image = images[0]['src']
         end
 
+        category = Classifier.classify(@models,title+content,'lib/svm_model/','training_set')
+
         unless Post.exists? title: title
-          Post.create title: title, content: content, image: image, url: link, source_id: source.id, category_id: 1, created_at: date
+          Post.create title: title, content: content, image: image, url: link, source_id: source.id, category_id: category, created_at: date
           puts "POST: #{title} was created successfully"
+          puts "Classifyed into #{category}"
         end
       end
     end

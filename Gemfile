@@ -47,6 +47,9 @@ gem 'em-http-request'
 # HTML parser
 gem 'nokogiri'
 
+# Ruby binding for libsvm library
+gem 'rb-libsvm'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

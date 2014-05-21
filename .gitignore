@@ -20,3 +20,6 @@
 
 # Database configuration
 /config/database.yml
+
+# SVM Models
+/lib/svm_model/*

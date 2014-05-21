@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :title, :content, :url, :category_id, :source_id , message: 'Este campo es requerido.'
   validates :category_id, numericality: true, allow_nil: false
-  validates :source_id, numericality:true, allow_nil: false
+  validates :source_id, numericality:true,  allow_nil: false
   validates_length_of :content, minimum: 20, message: 'Debe ser mayor de 20 caracteres'
   validates_uniqueness_of :title, message: 'Este post ya existe.'
   validates_format_of :url, :with => URI.regexp(['http']), message: 'Url inválida'

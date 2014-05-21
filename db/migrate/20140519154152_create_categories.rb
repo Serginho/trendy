@@ -4,5 +4,6 @@ class CreateCategories < ActiveRecord::Migration
       t.string :name
       t.string :description
     end
+
   end
 end
