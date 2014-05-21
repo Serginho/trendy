@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+source1:
+  id: 1
+  name: Bitelia.com
+  url: http://bitelia.com/feed
+
+source2:
+  id: 2
+  name: Alt1040.com
+  url: http://alt1040.com/feed

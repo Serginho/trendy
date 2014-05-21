@@ -38,6 +38,15 @@ gem 'pg'
 # Foreigner to create foreign keys on migration files
 gem 'foreigner'
 
+# EventMachine for asynchronous requests
+gem 'eventmachine'
+
+# EventMachine-http-request for asynchronous http requests
+gem 'em-http-request'
+
+# HTML parser
+gem 'nokogiri'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

@@ -6,6 +6,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :image
       t.string :url
       t.references :category
+      t.references :source
 
       t.timestamps
     end
