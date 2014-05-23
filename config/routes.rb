@@ -5,9 +5,16 @@ Trendy::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  resources :posts
+  get '/posts' => 'posts#index'
+  get '/posts/category/:id' => 'posts#category'
 
   root 'posts#index'
+
+
+  #Error pages
+  get '404', :to => 'application#page_not_found'
+  get '422', :to => 'application#server_error'
+  get '500', :to => 'application#server_error'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

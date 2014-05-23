@@ -1,0 +1,27 @@
+<!-- Features Wrapper -->
+<div id="features-wrapper">
+  <div class="container">
+    <% posts.each_slice(3) do |aposts| %>
+        <div class="row">
+          <% aposts.each do |post| %>
+              <div class="4u">
+                <!-- Box -->
+                <section class="box box-feature">
+                  <a href="<%= post.url %>" target="_blank" class="image image-full"><img src="<%= post.image %>" alt="<%= post.title %>" /></a>
+                  <div class="inner">
+                    <header>
+                      <h2><a href="<%= post.url %>" target="_blank"><%= post.title %></a></h2>
+                      <span class="byline"><%= post.category.name %> | <i class="fa fa-facebook-square social"></i>  <i class="fa fa-twitter-square social"></i>  <i class="fa fa-tumblr-square social"></i>  <i class="fa fa-google-plus-square social"></i> </span>
+              <span class="byline"><%= Date.strptime(post.created_at.to_s, "%Y-%m-%d %H:%M:%S %Z").strftime("%d/%m/%Y")%> |
+                <% (1..5).each do %><i class="fa fa-star-o"></i><% end %>
+              </span>
+                    </header>
+                    <p><%= post.content[0..320].gsub(/\s\w+\s*$/,'...')%></p>
+                  </div>
+                </section>
+              </div>
+          <% end %>
+    <% end %>
+    </div>
+  </div>
+</div>

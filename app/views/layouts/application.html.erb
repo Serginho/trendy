@@ -37,24 +37,29 @@
 
           <!-- Logo -->
           <div id="logo">
-            <h1><a href="#" id="logo">Trendy</a></h1>
+            <h1><a href="/" id="logo">Trendy</a></h1>
             <span>Lo interesante está aquí...</span>
           </div>
 
           <!-- Nav -->
           <nav id="nav">
             <ul>
-              <li class="current_page_item"><a href="index.html">Principal</a></li>
+              <% if @current_page.nil? then %>
+                  <li class="current_page_item"><a href="#">Principal</a></li>
+              <% else %>
+                  <% @categories.each do |category| %>
+                      <% if @current_page.to_i == category.id.to_i %>
+                          <li class="current_page_item"><a href="#"><%= category.name %></a></li>
+                      <% end %>
+                  <% end %>
+              <% end %>
+
               <li><a href="login.html" data-dropdown="#dropdown-3">Autenticate</a></li>
               <li><a href="#" data-dropdown="#dropdown-1">Categorias</a>
                 <ul hidden="hidden">
-                  <li><a href="categories.html">&nbsp;&nbsp;&nbsp;&nbsp;Deportes</a></li>
-                  <li><a href="#2">&nbsp;&nbsp;&nbsp;&nbsp;Política</a></li>
-                  <li><a href="#3">&nbsp;&nbsp;&nbsp;&nbsp;Ciencia y tecnología</a></li>
-                  <li><a href="#4">&nbsp;&nbsp;&nbsp;&nbsp;Economía</a></li>
-                  <li><a href="#5">&nbsp;&nbsp;&nbsp;&nbsp;Ocio</a></li>
-                  <li><a href="#5">&nbsp;&nbsp;&nbsp;&nbsp;Sociedad</a></li>
-                  <li><a href="#5">&nbsp;&nbsp;&nbsp;&nbsp;Cultura</a></li>
+                  <% @categories.each do |category| %>
+                      <li><%=link_to "&nbsp;&nbsp;&nbsp;&nbsp;#{category.name}", "/posts/category/#{category.id}" %></li>
+                  <% end %>
                 </ul>
               </li>
               <li><a href="search.html" data-dropdown="#dropdown-2">Buscar</a></li>
@@ -63,13 +68,9 @@
         </header>
         <div id="dropdown-1" class="dropdown dropdown-tip">
           <ul class="dropdown-menu">
-            <li><a href="categories.html">Deportes</a></li>
-            <li><a href="#2">Política</a></li>
-            <li><a href="#3">Ciencia y tecnología</a></li>
-            <li><a href="#4">Economía</a></li>
-            <li><a href="#5">Ocio</a></li>
-            <li><a href="#5">Sociedad</a></li>
-            <li><a href="#5">Cultura</a></li>
+            <% @categories.each do |category| %>
+                <li><%=link_to "#{category.name}", "/posts/category/#{category.id}" %></li>
+            <% end %>
           </ul>
         </div>
         <div id="dropdown-2" class="dropdown dropdown-tip">

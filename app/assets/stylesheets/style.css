@@ -177,13 +177,13 @@
 	section > :last-child,
 	article > :last-child
 	{
-		margin-bottom: 0;
+        margin-bottom: 0;
 	}
 
 	section:last-child,
 	article:last-child
 	{
-		margin-bottom: 0;
+
 	}
 
 	.image
@@ -301,7 +301,7 @@
 
 	header
 	{
-		margin: 0 0 2em 0;
+		margin: 0 0 0.5em 0;
 	}
 
 		header h2, header h3
