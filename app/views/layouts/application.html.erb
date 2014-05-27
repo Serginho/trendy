@@ -65,7 +65,7 @@
                   <% end %>
                 </ul>
               </li>
-              <li><a href="search.html" data-dropdown="#dropdown-2">Buscar</a></li>
+              <li><a href="/posts/search" data-dropdown="#dropdown-2">Buscar</a></li>
             </ul>
           </nav>
         </header>
@@ -78,10 +78,9 @@
         </div>
         <div id="dropdown-2" class="dropdown dropdown-tip">
           <div class="dropdown-panel">
-            <form>
-              <input style="display: inline-block" type="text" name="search" placeholder="Buscar"/>
-            </form>
-
+            <%= form_tag posts_search_path, method: 'get' do %>
+                <%= text_field_tag :query, params[:query], style: 'display: inline-block', placeholder: 'Buscar' %>
+            <% end %>
           </div>
         </div>
         <div id="dropdown-3" class="dropdown dropdown-tip">

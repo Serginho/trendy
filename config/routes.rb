@@ -10,6 +10,7 @@ Trendy::Application.routes.draw do
 
   get '/posts' => 'posts#index'
   get '/posts/category/:id' => 'posts#category'
+  get 'posts/search/' => 'posts#search', as: 'posts_search'
 
   get 'users/login' => 'sessions#new'
   get 'users/logout' => 'sessions#destroy', as: 'log_out'
