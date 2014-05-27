@@ -50,6 +50,9 @@ gem 'nokogiri'
 # Ruby binding for libsvm library
 gem 'rb-libsvm'
 
+# Password encryptation
+gem "bcrypt-ruby", :require => "bcrypt"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

@@ -1,0 +1,19 @@
+<%=	form_for @user do |f|  %>
+    <% if @user.errors.any? %>
+        <div class="message error">
+            <% @user.errors.each do |attr, error| %>
+                <b><%= error %></b><br>
+            <% end %>
+        </div>
+    <% end %>
+    <p>
+      <%= f.text_field :username, placeholder: 'Usuario' %>
+    </p>
+    <p>
+      <%= f.password_field :password, placeholder: 'Contraseña'%>
+    </p>
+    <p>
+      <%= f.password_field :password_confirmation, placeholder: 'Confirmación de contraseña' %>
+    </p>
+    <p ><%= f.submit 'Enviar', class: 'button small' %></p>
+<% end %>

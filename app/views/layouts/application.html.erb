@@ -53,8 +53,11 @@
                       <% end %>
                   <% end %>
               <% end %>
-
-              <li><a href="login.html" data-dropdown="#dropdown-3">Autenticate</a></li>
+              <% if @current_user then %>
+                  <li><%= link_to "#{@current_user.username}(logout)", log_out_path %></li>
+              <% else %>
+              <li><a href="/users/login" data-dropdown="#dropdown-3">Autenticate</a></li>
+              <% end %>
               <li><a href="#" data-dropdown="#dropdown-1">Categorias</a>
                 <ul hidden="hidden">
                   <% @categories.each do |category| %>
@@ -83,13 +86,28 @@
         </div>
         <div id="dropdown-3" class="dropdown dropdown-tip">
           <div class="dropdown-panel">
-            <form>
-              <input type="text" name="username" placeholder="Usuario"/>
-              <input type="password" name="password" placeholder="Password"/>
-              <input class="button small" type="submit" name="button_send" value="Enviar"/>
-            </form>
+            <%= form_tag sessions_path do %>
+                <%= text_field_tag :username, params[:username], placeholder: 'Usuario' %>
+                <%= password_field_tag :password, params[:password], placeholder: 'Contraseña' %>
+                <%= submit_tag 'Enviar', class: 'button small' %>
+                <button type="button" class="button small" onclick="window.location.href='/users/new'">Registrate!</button>
+            <% end %>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Error messagges -->
+<div id="message-box">
+  <div class="container">
+    <div class="row">
+      <div class="12u">
+        <% flash.each do |name, msg| %>
+            <div class="message <%= name == :notice ? 'success' : 'error' %>">
+              <%= msg %>
+            </div>
+        <% end %>
       </div>
     </div>
   </div>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+#Hash for fixtures belongs to word 'password'
+one:
+  username: pepe
+  password_salt: $2a$10$W5.eXquI78ENTjGfoVVCZO
+  password_hash: $2a$10$W5.eXquI78ENTjGfoVVCZOzwObi6sxw6NS9xJZAEENbWV0.AuGHKy
+
+two:
+  username: juan
+  password_salt: $2a$10$W5.eXquI78ENTjGfoVVCZO
+  password_hash: $2a$10$W5.eXquI78ENTjGfoVVCZOzwObi6sxw6NS9xJZAEENbWV0.AuGHKy
+

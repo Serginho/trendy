@@ -1,0 +1,21 @@
+<!-- Main Wrapper -->
+<div id="main-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="12u skel-cell-important">
+
+        <!-- Content -->
+        <div id="content">
+          <%= form_tag sessions_path do %>
+              <%= text_field_tag :username, params[:username], placeholder: 'Usuario' %>
+              <%= password_field_tag :password, params[:password], placeholder: 'Contraseña' %>
+              <%= submit_tag 'Enviar', class: 'button small' %>
+              <button type="button" class="button small" onclick="window.location.href='/users/new'">Registrate!</button>
+          <% end %>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

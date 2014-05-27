@@ -3,8 +3,12 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+
   # Load dropdown categories
   before_filter :load_categories
+
+  # Load current user
+  before_filter :current_user
 
   def page_not_found
     respond_to do |format|
@@ -20,8 +24,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  private
   def load_categories
     @current_page = params[:id]
     @categories = Category.all
+  end
+
+  def current_user
+    #@current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+    @current_user = User.find_by(id: session[:user_id])
   end
 end

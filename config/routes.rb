@@ -1,15 +1,20 @@
 Trendy::Application.routes.draw do
+  get "users/new"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
+  root 'posts#index'
+
   get '/posts' => 'posts#index'
   get '/posts/category/:id' => 'posts#category'
 
-  root 'posts#index'
-
+  get 'users/login' => 'sessions#new'
+  get 'users/logout' => 'sessions#destroy', as: 'log_out'
+  resources :users
+  resources :sessions, only: [:create, :destroy]
 
   #Error pages
   get '404', :to => 'application#page_not_found'
