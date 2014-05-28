@@ -53,6 +53,9 @@ gem 'rb-libsvm'
 # Password encryptation
 gem "bcrypt-ruby", :require => "bcrypt"
 
+# Pagination
+gem 'will_paginate'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

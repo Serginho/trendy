@@ -23,5 +23,6 @@
           <% end %>
     <% end %>
     </div>
+    <%= render partial: 'paginate', locals: {posts: posts} if paginate %>
   </div>
 </div>
