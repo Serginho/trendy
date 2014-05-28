@@ -6,7 +6,7 @@ post1:
   content: Lo ha hecho con un gol en el último minuto, en fuera de juego y sin querer. El camp now decepcionado
   image: https://scmedia.itsfogo.com/$-$/9a2c61c0e8834f62ba0f08760a92edee.png
   url: https://scmedia.itsfogo.com/$-$/9a2c61c0e8834f62ba0f08760a92edee.png
-  category_id: 1
+  category_id: 26
 
 post2:
   id: 2
@@ -14,4 +14,4 @@ post2:
   content: El presidente del gobierno ha robado dinero público y se ha burlado de los españoles en una rueda de prensa posterior
   image: http://www.sindicatoandaluz.org/files/rajoy.jpg
   url: http://www.sindicatoandaluz.org/files/rajoy.jpg
-  category_id: 3
+  category_id: 28

@@ -83,9 +83,8 @@ module Wrapper
           image = images[0]['src']
         end
 
-        category = Classifier.classify(@models,title+content,'lib/svm_model/','training_set')
-
         unless Post.exists? title: title
+          category = Classifier.classify(@models,title+content,'lib/svm_model/','training_set')
           Post.create title: title, content: content, image: image, url: link, source_id: source.id, category_id: category, created_at: date
           puts "POST: #{title} was created successfully"
           puts "Classifyed into #{category}"

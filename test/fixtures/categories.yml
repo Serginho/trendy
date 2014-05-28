@@ -1,16 +1,36 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 deportes:
-  id: 1
+  id: 24
   name: Deportes
   description: Esto es una descripción para deportes
 
-tecnologia:
-  id: 2
-  name: Tecnología
-  description: Esto es una descripción para tecnología
-
 economia:
-  id: 3
+  id: 25
   name: Economía
   description: Esto es una descripción para economía
+
+tecnologia:
+  id: 26
+  name: Ciencia y tecnología
+  description: Esto es una descripción para tecnología
+
+sociedad:
+  id: 28
+  name: Sociedad
+  description: Esto es una descripción para sociedad
+
+politica:
+  id: 29
+  name: Politica
+  description: Esto es una descripción para política
+
+cultura:
+  id: 30
+  name: Cultura
+  description: Esto es una descripción para cultura
+
+ocio:
+  id: 31
+  name: Ocio
+  description: Esto es una descripción para ocio
