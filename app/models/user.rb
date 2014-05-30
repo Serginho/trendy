@@ -3,6 +3,8 @@
 
 class User < ActiveRecord::Base
 
+  has_many :shares
+
   attr_accessor :password
   before_save :encrypt_password
 
