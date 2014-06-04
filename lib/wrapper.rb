@@ -2,6 +2,7 @@ require 'rss'
 require 'thread'
 require 'nokogiri'
 require 'em-http'
+require 'uri'
 
 module Wrapper
 
@@ -77,7 +78,7 @@ module Wrapper
         content = page_content.gsub /<\/?[^>]*>/," "
         content.strip!
         date = item.pubDate
-        link = item.link.strip
+        link = URI.extract(item.guid.to_s).first
         images = Nokogiri::HTML(page_content).css('img')
         if images.length > 0 then
           image = images[0]['src']
