@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.includes(:category).paginate(page: params[:page], per_page: 9)
+    @posts = Post.includes(:category, :rates).paginate(page: params[:page], per_page: 9)
   end
 
   def category

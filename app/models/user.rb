@@ -4,6 +4,7 @@
 class User < ActiveRecord::Base
 
   has_many :shares
+  has_many :rates
 
   attr_accessor :password
   before_save :encrypt_password

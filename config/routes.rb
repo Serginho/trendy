@@ -19,6 +19,8 @@ Trendy::Application.routes.draw do
 
   resources :shares , only: [:create]
 
+  resources :rates, only: [:create]
+
   #Error pages
   get '404', :to => 'application#page_not_found'
   get '422', :to => 'application#server_error'

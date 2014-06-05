@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
   belongs_to :category
   belongs_to :source
   has_many :shares
+  has_many :rates
 
   validates_presence_of :title, :content, :url, :category_id, :source_id , message: 'Este campo es requerido.'
   validates :category_id, numericality: true, allow_nil: false

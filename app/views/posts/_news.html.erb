@@ -17,8 +17,8 @@
                         <i site="Tuenti" post-id="<%= post.id %>" class="fa fa-tumblr-square social"></i>
                         <i site="Google+" post-id="<%= post.id %>" class="fa fa-google-plus-square social"></i>
                       </span>
-              <span class="byline"><%= Date.strptime(post.created_at.to_s, "%Y-%m-%d %H:%M:%S %Z").strftime("%d/%m/%Y")%> |
-                <% (1..5).each do %><i class="fa fa-star-o"></i><% end %>
+              <span id="rate" class="byline"><%= Date.strptime(post.created_at.to_s, "%Y-%m-%d %H:%M:%S %Z").strftime("%d/%m/%Y")%> |
+                <% (1..5).each do |i|%><i id="<%= i %>" post-id="<%= post.id %>" class="fa <%= post.rates.average(:score).to_i <= i ? 'fa-star-o' : 'fa-star'%>"></i><% end %>
               </span>
                     </header>
                     <p><%= post.content[0..320].gsub(/\s\w+\s*$/,'...')%></p>
