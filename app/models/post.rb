@@ -22,4 +22,5 @@ class Post < ActiveRecord::Base
                       group by posts.id, posts.title, categories.name) as p inner join posts on posts.id = p.id
                       order by p.avg_score + p.num_shares')
   end
+
 end
