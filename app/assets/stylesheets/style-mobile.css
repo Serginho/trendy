@@ -35,6 +35,9 @@
 		margin-bottom: 0 !important;
 	}
 
+    input{
+        margin:.5em;
+    }
 	.image-left
 	{
 		width: 25%;
@@ -43,10 +46,9 @@
 	
 	.button
 	{
-		width: 100%;
 		text-align: center;
 		font-size: 1.35em;
-		padding: 1.1em 0 1.1em 0 !important;
+		padding: .4em 0 .4em 0 !important;
 	}
 
 		.button.fa
