@@ -11,14 +11,14 @@
                   <div class="inner">
                     <header>
                       <h2><a href="<%= post.url %>" target="_blank"><%= post.title %></a></h2>
-                      <span class="byline"><%= post.category.name %> |
+                      <span class="byline"><%= post.category_name %> |
                         <i site="Facebook" post-id="<%= post.id %>" class="fa fa-facebook-square social"></i>
                         <i site="Twitter" post-id="<%= post.id %>" class="fa fa-twitter-square social"></i>
                         <i site="Tuenti" post-id="<%= post.id %>" class="fa fa-tumblr-square social"></i>
                         <i site="Google+" post-id="<%= post.id %>" class="fa fa-google-plus-square social"></i>
                       </span>
               <span id="rate" class="byline"><%= Date.strptime(post.created_at.to_s, "%Y-%m-%d %H:%M:%S %Z").strftime("%d/%m/%Y")%> |
-                <% (1..5).each do |i|%><i id="<%= i %>" post-id="<%= post.id %>" class="fa <%= post.rates.average(:score).to_i >= i ? 'fa-star' : 'fa-star-o'%>"></i><% end %>
+                <% (1..5).each do |i|%><i id="<%= i %>" post-id="<%= post.id %>" class="fa <%= post.avg_score.to_i >= i ? 'fa-star' : 'fa-star-o'%>"></i><% end %>
               </span>
                     </header>
                     <p><%= post.content[0..320].gsub(/\s\w+\s*$/,'...')%></p>

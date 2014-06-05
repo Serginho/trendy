@@ -12,4 +12,14 @@ class Post < ActiveRecord::Base
   validates_uniqueness_of :title, message: 'Este post ya existe.'
   validates_format_of :url, :with => URI.regexp(['http']), message: 'Url inválida'
   validates_format_of :image, :with => URI.regexp(['http']), allow_blank: true
+
+  def self.posts_for_index
+    self.find_by_sql('select p.id, p.title, posts.content, posts.url, posts.image, p.category_name, posts.created_at, p.avg_score, p.num_shares
+                      from (select posts.id,title, categories.name as category_name, avg(score) as avg_score, count(shares.id) as num_shares
+	                    from ((posts inner join categories on posts.category_id = categories.id)
+	                    left join rates on posts.id = rates.post_id)
+	                    left join shares on posts.id = shares.post_id
+                      group by posts.id, posts.title, categories.name) as p inner join posts on posts.id = p.id
+                      order by p.avg_score + p.num_shares')
+  end
 end

@@ -40,4 +40,8 @@ class PostTest < ActiveSupport::TestCase
     assert_not p.save
   end
 
+  test "should run posts_for_index" do
+    result = Post.posts_for_index
+    assert_equal 2,result.count
+  end
 end
