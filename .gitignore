@@ -23,3 +23,6 @@
 
 # SVM Models
 /lib/svm_model/*
+
+# Ignore precompiled assets
+/public/assets

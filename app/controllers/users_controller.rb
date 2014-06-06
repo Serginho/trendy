@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.create user_params
 
     if @user.save
-      redirect_to root_path, :notice => 'You are in!'
+      redirect_to root_path, :notice => 'Autenticado correctamente.'
     else
       render action: 'new'
     end

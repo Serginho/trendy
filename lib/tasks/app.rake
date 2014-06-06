@@ -18,5 +18,17 @@ namespace :app do
     c.save
     c = Category.create id: 31, name: 'Ocio', description: 'Esto es una descripción para ocio'
     c.save
+
+    s = Source.create name: 'Bitelia.com', url: 'http://feeds.hipertextual.com/bitelia'
+    s.save
+
+    st = Site.create id: 1, name: 'Facebook', url:'http://www.facebook.com/sharer.php?u='
+    st.save
+    st = Site.create id: 2, name: 'Twitter', url:'http://twitter.com/home?status='
+    st.save
+    st = Site.create id: 3, name: 'Tuenti', url:'http://twitter.com/home?status='
+    st.save
+    st = Site. create id: 4, name: 'Google +', url:'https://plus.google.com/share?url='
+    st.save
   end
 end
