@@ -3,10 +3,11 @@ Rate = function() {
 
     return{
        message: function (message, type){
-            $("#message-box [class=12u]").append("<div class='message "+type+"'>"+message+"</div>").fadeOut(5000,function(){
-                $("#message-box [class*=message]").remove();
-                $("#message-box [class=12u]").removeAttr('style')
-            })
+           $(".homepage").prepend("<div id='popup-message' style='position: fixed; right:2em; top:2em; z-index: 100'></div>");
+           $("#popup-message").append("<div class='message "+type+"'>"+message+"</div>").fadeOut(5000,function(){
+               $("#message-box [class*=message]").remove();
+               $("#message-box [class=12u]").removeAttr('style')
+           })
        },
 
        InitStars: function(){
