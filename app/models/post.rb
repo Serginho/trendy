@@ -40,7 +40,7 @@ class Post < ActiveRecord::Base
 	                    left join rates on posts.id = rates.post_id)
 	                    left join shares on posts.id = shares.post_id
                       group by posts.id, posts.title, categories.id, categories.name) as p inner join posts on posts.id = p.id
-                      order by p.avg_score + p.num_shares')
+                      order by p.avg_score + p.num_shares').take(15)
     end
   end
 
