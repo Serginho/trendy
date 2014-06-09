@@ -1,5 +1,6 @@
 class Category < ActiveRecord::Base
   has_many :posts
+  has_many :customizes
 
   validates_presence_of :name, message: 'Este campo es requerido.'
   validates_format_of :name, with: /\A[a-zA-Z ]+\z/, message: 'Solo se permiten letras.', on: :create

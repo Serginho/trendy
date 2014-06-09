@@ -44,4 +44,9 @@ class PostTest < ActiveSupport::TestCase
     result = Post.posts_for_index
     assert_equal 2,result.count
   end
+
+  test "should run posts for index with user" do
+    result = Post.posts_for_index(1)
+    assert_equal 2, result.count
+  end
 end

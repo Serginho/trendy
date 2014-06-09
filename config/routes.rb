@@ -14,6 +14,8 @@ Trendy::Application.routes.draw do
 
   get 'users/login' => 'sessions#new'
   get 'users/logout' => 'sessions#destroy', as: 'log_out'
+  get 'user/settings' => 'customizes#edit', as: 'settings_edit'
+  post 'user/settings' => 'customizes#create', as: 'settings'
   resources :users
   resources :sessions, only: [:create, :destroy]
 

@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
   has_many :shares
   has_many :rates
+  has_many :customizes
 
   attr_accessor :password
   before_save :encrypt_password

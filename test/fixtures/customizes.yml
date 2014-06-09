@@ -1,0 +1,38 @@
+
+one:
+  user_id: 1
+  category_id: 24
+  rank: 10
+
+two:
+  user_id: 1
+  category_id: 25
+  rank: 10
+
+three:
+  user_id: 1
+  category_id: 26
+  rank: 10
+
+four:
+  user_id: 1
+  category_id: 28
+  rank: 10
+
+five:
+  user_id: 1
+  category_id: 29
+  rank: 10
+
+six:
+  user_id: 1
+  category_id: 30
+  rank: 10
+
+seven:
+  user_id: 1
+  category_id: 31
+  rank: 10
+
+
+

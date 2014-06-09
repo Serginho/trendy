@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140605162727) do
+ActiveRecord::Schema.define(version: 20140608205932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 20140605162727) do
     t.string "name"
     t.string "description"
   end
+
+  create_table "customizes", force: true do |t|
+    t.integer "user_id"
+    t.integer "category_id"
+    t.integer "rank"
+  end
+
+  add_index "customizes", ["category_id"], name: "index_customizes_on_category_id", using: :btree
+  add_index "customizes", ["user_id"], name: "index_customizes_on_user_id", using: :btree
 
   create_table "posts", force: true do |t|
     t.string   "title"

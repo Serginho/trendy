@@ -1,0 +1,43 @@
+<% if @current_user then %>
+    <% content_for :head do %>
+        <%= javascript_include_tag 'customizes' %>
+        <%= javascript_include_tag 'rangeslider.min' %>
+        <%= stylesheet_link_tag 'rangeslider' %>
+    <% end %>
+
+    <%= content_for :head %>
+    <!-- Main Wrapper -->
+    <div id="main-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="12u skel-cell-important">
+
+            <!-- Content -->
+            <div id="content">
+              <h3 style="margin-bottom: 0.5em">Elige tus preferencias sobre cada categoría</h3>
+              <span>Puntua de 1 a 10 el grado de interés que tiene por cada categoría.</span><br><br>
+              <%=	form_tag settings_path do  %>
+                  <% unless @customizes.count == 0 then %>
+                      <% @customizes.each do |customize| %>
+                      <p>
+                        <span><%= customize.category.name %> </span> <%= range_field_tag customize.category.id, customize.rank, {min:0, max: 10, step: 1} %>
+                      </p>
+                      <% end %>
+                  <% else %>
+                      <% @categories.each do |category| %>
+                          <p>
+                            <span><%= category.name %> </span> <%= range_field_tag category.id, '0', {min:0, max: 10, step: 1} %>
+                          </p>
+                      <% end %>
+                  <% end %>
+                  <%= submit_tag 'Guardar', class: 'button small' %>
+              <% end %>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+<% else %>
+    <h1>Necesitas estár autenticado para ver esto.</h1>
+<% end %>

@@ -1,7 +1,11 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.posts_for_index.take(15)
+    if session[:user_id] then
+      @posts = Post.posts_for_index(session[:user_id])
+    else
+      @posts = Post.posts_for_index
+    end
   end
 
   def category
